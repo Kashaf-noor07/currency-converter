@@ -1,0 +1,85 @@
+import Link from "next/link";
+import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
+
+interface Props {
+  from: string;
+  to: string;
+  amount: number;
+  result: number;
+  rate: number;
+}
+
+export default function DetailedConversion({
+  from,
+  to,
+  amount,
+  result,
+  rate,
+}: Props) {
+  return (
+    <main className="min-h-screen bg-white">
+
+      {/* ================= HERO SECTION ================= */}
+      <section className="bg-blue-100 py-20">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+          {/* Left Content */}
+          <div className="max-w-xl space-y-6">
+            <h1 className="text-4xl font-bold text-gray-800">
+              {from} to {to}
+            </h1>
+
+            <div className="text-2xl font-semibold text-gray-700">
+              {amount} {from} = {result.toFixed(2)} {to}
+            </div>
+
+            {/* <p className="text-gray-600">
+              1 {from} = {rate} {to}
+            </p> */}
+
+            <div className="flex items-center">
+                          <Link
+                            href="/"
+                            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md transition"
+                          >
+                            <CurrencyDollarIcon className="w-5 h-5 text-white" />
+                            Compare rates
+                          </Link>
+                        </div>
+          </div>
+
+          {/* Right Placeholder */}
+          <div className="hidden md:block w-96 h-60 bg-gray-200 rounded-lg opacity-50" />
+        </div>
+      </section>
+
+      {/* ================= INFO SECTION ============== */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-6 space-y-8 text-center">
+
+          <h2 className="text-2xl font-bold text-gray-800">
+            {from} to {to} Exchange Rate
+          </h2>
+
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            The current exchange rate from {from} to {to} is {rate}.
+            This means for every 1 {from}, you will receive {rate} {to}.
+          </p>
+
+          <div className="bg-white shadow-sm  text-black rounded-lg p-6 text-lg font-medium">
+            {amount} {from} converts to {result.toFixed(2)} {to}
+          </div>
+
+          <Link
+            href={`/convert?currency=${from}`}
+            className="text-blue-600 hover:underline"
+          >
+            View all {from} rates →
+          </Link>
+
+        </div>
+      </section>
+
+    </main>
+  );
+}
