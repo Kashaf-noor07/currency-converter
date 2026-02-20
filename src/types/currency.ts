@@ -1,15 +1,4 @@
-// export interface CurrencyRate {
-//   code: string
-//   rate: number
-// }
 
-// export interface ConversionResult {
-//   from: string
-//   to: string
-//   amount: number
-//   rate: number
-//   result: number
-// }
 export type CurrencyCode = string;
 
 export interface ExchangeRateResponse {
