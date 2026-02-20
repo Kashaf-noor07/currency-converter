@@ -25,7 +25,7 @@ export default function CurrencyForm({ currencies, result }: Props) {
     setTo(searchParams.get("to") || "PKR");
   }, [searchParams]);
 
-  // Auto update with debounce
+ 
   useEffect(() => {
     const timeout = setTimeout(() => {
       router.replace(`/?from=${from}&to=${to}&amount=${amount}`);
@@ -40,12 +40,12 @@ export default function CurrencyForm({ currencies, result }: Props) {
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap lg:flex-nowrap">
-      {/* Amount Input */}
+    
       <div className="w-full sm:min-w-[140px] sm:flex-1">
         <CurrencyInput value={amount} onChange={setAmount} />
       </div>
 
-      {/* From Currency */}
+     
       <div className="w-full sm:min-w-[160px] sm:flex-1">
         <CurrencySelect
           value={from}
@@ -54,7 +54,7 @@ export default function CurrencyForm({ currencies, result }: Props) {
         />
       </div>
 
-      {/* Swap Button */}
+      
       <button
         onClick={swapCurrencies}
         className="self-center text-xl text-gray-500 hover:text-gray-700 transition-colors 
@@ -64,7 +64,7 @@ export default function CurrencyForm({ currencies, result }: Props) {
         ⇄
       </button>
 
-      {/* To Currency */}
+      
       <div className="w-full sm:min-w-[160px] sm:flex-1">
         <CurrencySelect
           value={to}
@@ -73,7 +73,7 @@ export default function CurrencyForm({ currencies, result }: Props) {
         />
       </div>
 
-      {/* Result Display */}
+      
       <div className="w-full sm:min-w-[140px] sm:flex-1">
         <input
           type="text"

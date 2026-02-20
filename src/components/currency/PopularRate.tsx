@@ -22,22 +22,22 @@ const page = await client.getSingle("popularratepage");
 
   const popular = ["AUD", "CAD", "CNH", "EUR", "GBP", "HKD", "JPY", "NZD", "SGD"];
 
-  // Dynamic currency name mapping (you can expand this)
+  
   const currencyNames: Record<string, string> = {
     USD: "United States Dollar $",
     EUR: "Euro €",
     GBP: "British Pound £",
     JPY: "Japanese Yen ¥",
-    // Add more as needed
+ 
   };
   
 
   return (
     <main className="min-h-screen">
-      {/* HERO SECTION */}
+     
       <section className="bg-linear-to-br from-blue-50 to-blue-100 py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          {/* Left Content */}
+        
           <div className="flex-1 space-y-4 md:space-y-6 text-center md:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
               {currencyNames[baseCurrency] || baseCurrency}
@@ -46,10 +46,10 @@ const page = await client.getSingle("popularratepage");
   field={page.data.hero_description_one}
   components={{
     paragraph: ({ children }) => {
-      // Convert entire field to plain text
+     
       const rawText = asText(page.data.hero_description_one);
 
-      // Replace dynamic variable
+
       const replacedText = rawText.replace(
         /{{Currency}}/g,
         baseCurrency
@@ -77,7 +77,7 @@ const page = await client.getSingle("popularratepage");
         </div>
       </section>
 
-      {/* POPULAR RATES SECTION */}
+      
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
           {page.data.hero_title_two && (
@@ -99,7 +99,7 @@ const page = await client.getSingle("popularratepage");
 )}
 
 
-          {/* Grid Buttons */}
+         
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pt-8">
             {popular.map((cur) => (
               <Link
@@ -127,6 +127,6 @@ const page = await client.getSingle("popularratepage");
   );
 }
 
-// import { PrismicRichText } from "@prismicio/react";
+
 
 

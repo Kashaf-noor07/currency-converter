@@ -21,9 +21,3 @@ export default function CurrencyResult({
 }
 
 
- {/* <CurrencyResult
-      amount={amount}
-      from={from}
-      to={to}
-      result={result}
-    /> */}

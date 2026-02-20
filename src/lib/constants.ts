@@ -24,7 +24,7 @@ export const currencyMeta: Record<
   EUR: {
     name: "Euro",
     symbol: "€",
-    countryCode: "eu", // European Union flag
+    countryCode: "eu", 
   },
 
   GBP: {

@@ -43,7 +43,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <main className="min-h-screen bg-gray-100">
-      {/* Top Blue Section */}
+     
       <section className="bg-blue-100 py-20 text-center">
         <div className="max-w-3xl mx-auto">
           <PrismicRichText
@@ -66,7 +66,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      {/* Floating Card Section */}
+     
       <section className="relative -mt-16 flex justify-center px-4">
         <div className="bg-white rounded-xl shadow-xl w-full max-w-3xl p-8 space-y-6">
           <div className="text-center space-y-2">
@@ -91,7 +91,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             />
           </div>
 
-          {/* USE YOUR COMPONENTS HERE */}
+        
 
           <CurrencyForm currencies={currencies} result={result} />
 

@@ -20,7 +20,7 @@ export default async function ConvertPage({ searchParams }: Props) {
   const to = params.to;
   const amount = Number(params.amount || 1);
 
-  // CASE 1: /convert?currency=USD
+  
   if (currency && !from && !to) {
     const data = await fetchRates(currency);
 
@@ -32,7 +32,7 @@ export default async function ConvertPage({ searchParams }: Props) {
     );
   }
 
-  // CASE 2: /convert?from=USD&to=PKR
+  
   if (from && to) {
     const data = await fetchRates(from);
 
