@@ -131,7 +131,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           />
 
           <div className="flex items-center gap-2">
-            <button className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md transition">
+            <button className="inline-flex items-center cursor-pointer gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md transition">
               <ArrowTurnDownRightIcon className="w-5 h-5 text-white" />
               Find out more
             </button>

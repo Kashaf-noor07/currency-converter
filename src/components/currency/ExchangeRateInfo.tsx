@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import LoadingLinkButton from "@/src/components/ui/Button";
 
 interface Props {
   from: string;
@@ -38,13 +39,13 @@ export default function DetailedConversion({
             </p> */}
 
             <div className="flex items-center">
-                          <Link
-                            href="/"
-                            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md transition"
-                          >
-                            <CurrencyDollarIcon className="w-5 h-5 text-white" />
-                            Compare rates
-                          </Link>
+                          <LoadingLinkButton href="/" >
+                                     
+                                        <span className="flex items-center gap-2">
+                                          <CurrencyDollarIcon className="w-5 h-5" />
+                                          Compare rates
+                                        </span>
+                                      </LoadingLinkButton>
                         </div>
           </div>
 
